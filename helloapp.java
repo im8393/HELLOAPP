@@ -1,6 +1,4 @@
-
 public class helloapp {
-
     public static void main(String[] args) {
         String name;
 
@@ -8,11 +6,13 @@ public class helloapp {
             name = "World";
         } else {
             StringBuilder nameBuilder = new StringBuilder();
-            for (int i = 0; i < args.length; i++) {
-                nameBuilder.append(args[i]);
-                if (i < args.length - 1) {
+            boolean first = true;
+            for (String n : args) {
+                if (!first) {
                     nameBuilder.append(", ");
                 }
+                nameBuilder.append(n);
+                first = false;
             }
             name = nameBuilder.toString();
         }
